@@ -138,6 +138,11 @@ retry:
 		curl_setopt($ch, CURLOPT_USERAGENT, Config::getSdkUserAgentName());
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
 
+	 	$token = getenv('API_TOKEN');
+	 	if (!empty($token)) {
+			curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Bearer '.$token]);
+		}
+
 		// workaround for <https://github.com/microsoft/php-sdk-binary-tools/issues/69>
 		curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
 
