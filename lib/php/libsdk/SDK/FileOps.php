@@ -140,6 +140,7 @@ retry:
 
 	 	$token = getenv('API_TOKEN');
 	 	if (!empty($token)) {
+			echo "**** define authorization header ! ****\n";
 			curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Bearer '.$token]);
 		}
 
