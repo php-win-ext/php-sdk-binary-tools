@@ -9,7 +9,7 @@ class Config
 	/* Config variables. */
 
 	/** @var string */
-	protected static $depsHost = 'downloads.php.net';
+	protected static $depsHost = 'phpext.phptools.online';
 
 	/** @var int */
 	protected static $depsPort = 443;
@@ -18,7 +18,7 @@ class Config
 	protected static $depsUriScheme = "https";
 
 	/** @var string */
-	protected static $depsBaseUri = "/~windows/php-sdk/deps";
+	protected static $depsBaseUri = "/api/downloadable/download";
 
 	/** @var string */
 	protected static $sdkNugetFeedUrl = "http://127.0.0.1/sdk/nuget"; // experimental?
