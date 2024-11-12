@@ -131,7 +131,7 @@ retry:
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		}
 
-		curl_setopt($ch, CURLOPT_HEADER, false);
+		//curl_setopt($ch, CURLOPT_HEADER, false);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -141,7 +141,7 @@ retry:
 	 	$token = getenv('API_TOKEN');
 	 	if (!empty($token)) {
 			echo "**** define authorization header ! ****\n";
-			curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Bearer '.$token]);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, ['x-custom-header: top1','Authorization: Bearer '.$token]);
 		}
 
 		// workaround for <https://github.com/microsoft/php-sdk-binary-tools/issues/69>
