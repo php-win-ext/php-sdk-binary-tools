@@ -146,7 +146,7 @@ retry:
 			var_dump(curl_setopt($ch, CURLOPT_HTTPHEADER, ['Accept: text/plain','X-custom-header: top1','Authorization: Bearer '.$token]));
 		}
 		
-		curl_setopt($ch, CURLOPT_USERAGENT, 'test');
+		curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-SDK-BINARY-TOOLS/123');
 		//curl_setopt($ch, CURLOPT_USERAGENT, Config::getSdkUserAgentName());
 
 		echo "curl_error=". curl_error($ch) ."\n";
