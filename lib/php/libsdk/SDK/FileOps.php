@@ -94,7 +94,7 @@ trait FileOps
 					throw new Exception("Unable to $cb '$src_path' to '$dst_path'");
 				}
 			}
-			
+
 		}
 
 		return true;
@@ -128,7 +128,7 @@ retry:
 
 		if ($dest_fn) {
 			$fd = fopen($dest_fn, "w+");
-			curl_setopt($ch, CURLOPT_FILE, $fd); 
+			curl_setopt($ch, CURLOPT_FILE, $fd);
 		} else {
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		}
@@ -145,9 +145,8 @@ retry:
 			echo "**** define authorization header ! ****\n";
 			var_dump(curl_setopt($ch, CURLOPT_HTTPHEADER, ['Accept: text/plain','X-custom-header: top1','Authorization: Bearer '.$token]));
 		}
-		
-		curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-SDK-BINARY-TOOLS');
-		//curl_setopt($ch, CURLOPT_USERAGENT, Config::getSdkUserAgentName());
+
+		curl_setopt($ch, CURLOPT_USERAGENT, Config::getSdkUserAgentName());
 
 		echo "curl_error=". curl_error($ch) ."\n";
 
