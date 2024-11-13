@@ -122,6 +122,8 @@ trait FileOps
 retry:
 		$ch = curl_init();
 
+	 echo "CALL $url \n";
+
 		curl_setopt($ch, CURLOPT_URL, $url);
 
 		if ($dest_fn) {
