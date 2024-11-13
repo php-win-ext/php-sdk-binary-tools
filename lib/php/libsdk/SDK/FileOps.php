@@ -133,7 +133,7 @@ retry:
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		}
 
-		//curl_setopt($ch, CURLOPT_HEADER, false);
+		curl_setopt($ch, CURLOPT_HEADER, true);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -146,7 +146,8 @@ retry:
 			var_dump(curl_setopt($ch, CURLOPT_HTTPHEADER, ['Accept: text/plain','X-custom-header: top1','Authorization: Bearer '.$token]));
 		}
 		
-		curl_setopt($ch, CURLOPT_USERAGENT, Config::getSdkUserAgentName());
+		curl_setopt($ch, CURLOPT_USERAGENT, 'test');
+		//curl_setopt($ch, CURLOPT_USERAGENT, Config::getSdkUserAgentName());
 
 		echo "curl_error=". curl_error($ch) ."\n";
 
