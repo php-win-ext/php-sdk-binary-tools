@@ -137,7 +137,6 @@ retry:
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-		curl_setopt($ch, CURLOPT_USERAGENT, Config::getSdkUserAgentName());
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
 		curl_setopt($ch, CURLOPT_VERBOSE, 1);
 
@@ -146,6 +145,9 @@ retry:
 			echo "**** define authorization header ! ****\n";
 			var_dump(curl_setopt($ch, CURLOPT_HTTPHEADER, ['Accept: text/plain','X-custom-header: top1','Authorization: Bearer '.$token]));
 		}
+		
+		curl_setopt($ch, CURLOPT_USERAGENT, Config::getSdkUserAgentName());
+
 		echo "curl_error=". curl_error($ch) ."\n";
 
 
