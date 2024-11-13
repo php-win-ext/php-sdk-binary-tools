@@ -143,7 +143,7 @@ retry:
 	 	$token = getenv('API_TOKEN');
 	 	if (!empty($token)) {
 			echo "**** define authorization header ! ****\n";
-			curl_setopt($ch, CURLOPT_HTTPHEADER, ['x-custom-header: top1','Authorization: Bearer '.$token]);
+			var_dump(curl_setopt($ch, CURLOPT_HTTPHEADER, ['x-custom-header: top1','Authorization: Bearer '.$token]));
 		}
 
 		// workaround for <https://github.com/microsoft/php-sdk-binary-tools/issues/69>
